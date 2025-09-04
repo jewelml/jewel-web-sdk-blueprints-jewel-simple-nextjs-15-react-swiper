@@ -7,7 +7,7 @@ import { SearchControlsProps, ModelId, ModelOption } from '@/types';
 export default function SearchControls({}: SearchControlsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [itemId, setItemId] = useState<string>('');
+  const [itemId, setItemId] = useState<string>('1177646331_multicolor');
   const [selectedModels, setSelectedModels] = useState<ModelId[]>(['B_prod']);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -19,6 +19,8 @@ export default function SearchControls({}: SearchControlsProps) {
     
     if (itemIdParam) {
       setItemId(itemIdParam);
+    } else {
+      setItemId('1177646331_multicolor');
     }
     if (modelParam) {
       const models = modelParam.split(',').map(m => m.trim()) as ModelId[];
